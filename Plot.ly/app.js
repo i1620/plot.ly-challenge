@@ -1,14 +1,14 @@
 function getPlot(id) {
 
     // Get Data from json file
-    d3.json("Dataset/samples.json").then((data)=> {
+    d3.json("samples.json").then((data)=> {
         console.log(data)
 
         var washfreq = data.metadata.map(d => d.washfreq)
         console.log(`Washing Frequency: ${washfreq}`)
 
         // Filter values by id
-        var samples = data.samples.filters(s => s.id.toString() === id)[0];
+        var samples = data.samples.filter(s => s.id.toString() === id)[0];
         console.log(samples)
 
         // Get the Top 10
@@ -83,9 +83,9 @@ function getPlot(id) {
 function getInfo(id) {
 
     // Read Data
-    d3.json("Dataset/samples.json").then((data) =>{
+    d3.json("samples.json").then((data) =>{
 
-        var metadate = data.metadata;
+        var metadata = data.metadata;
         console.log(metadata)
 
         var result = metadata.filter(meta => meta.id.toString() == id)[0]
@@ -105,7 +105,7 @@ function init() {
     var dropdown = d3.select("#selDataset");
 
     // Read Data
-    d3.json("Dataset/samples.json").then((data)=>{
+    d3.json("samples.json").then((data)=>{
         console.log(data)
 
         data.names.forEach(function(name){
