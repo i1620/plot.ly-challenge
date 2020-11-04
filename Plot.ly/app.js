@@ -27,7 +27,7 @@ function getPlot(id) {
             y: OTU_id,
             text: labels,
             marker: {
-                color: 'rgb(142,124,195)'},
+                color: 'rgb(26,188,156)'},
             type:"bar",
             orientation: "h"
         };
@@ -68,7 +68,7 @@ function getPlot(id) {
         var layout_bub = {
             xaxis:{title:"OTU ID"},
             height: 600,
-            width: 1000
+            width: 1000,
         };
 
         // Data Variable
